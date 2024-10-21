@@ -9,6 +9,7 @@ header{
     align-items: center;
     background-color: #FAECED;
     padding: 14px 40px;
+    height: 11%;
 }
 
 .logo{
@@ -19,6 +20,14 @@ header{
     display: flex;
 }
 
+.container {
+    margin-top: 10px;
+}
+
+.card-header {
+    text-align: center;
+}
+
 .nav > li > a {
     color: #333;
     font-size: 20px;
@@ -26,27 +35,36 @@ header{
     text-decoration: none;
 }
 
-footer{
+/* footer{
     background-color: #FAECED;
     color: #333;
     text-align: center;
     font-size: 20px;
-    margin-top: 100px;
+    margin-top: 60px;
     padding: 20px 0;
-}
+} */
 
 .nav-color{
-  background-color:rgb(62,45,34);
+    background-color:rgb(62,45,34);
+}
+
+.items {
+    margin-top: 10px;
 }
 
 .btn-primary{
-  background-color:rgb(62,45,34);
-  border-color:rgb(62,45,34);
+    background-color:rgb(62,45,34);
+    border-color:rgb(62,45,34);
 }
 
+.custom-margin {
+    margin-top: 10px;
+}
+
+
 .btn-danger{
-  background-color: rgb(106,64,33);
-  border-color: rgb(106,64,33);
+    background-color: rgb(106,64,33);
+    border-color: rgb(106,64,33);
 }
 
 .btn-secondary{
@@ -64,4 +82,243 @@ footer{
     color: #000000;
     cursor: pointer;
     border: none;
+}
+
+/* .header-right{
+    display: flex;
+} */
+
+.text-dark {
+    font-size: 16px;
+    margin: 6px 0 0 0;
+    text-decoration: none;
+}
+
+.updated-items {
+    width: fit-content;
+    margin: auto;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.search-container form {
+    display: flex;
+    align-items: center;
+}
+
+.post-link {
+    background-color: #007bff;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.post-link:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.search-box {
+    display: flex;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-input {
+    border: none;
+    width: 250px;
+    padding: 8px;
+    border-radius: 0;
+    outline: none;
+}
+
+.btn-search {
+    background-color: white;
+    border: none;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-icon {
+    font-size: 18px;
+}
+
+.search-box:focus-within {
+    box-shadow: 0 0 5px #007bff;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#app {
+    min-height: 100vh; /* ビューポートの高さを確保 */
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    display: none; /* 初期状態では非表示 */
+    position: relative; /* フッターをページ内の要素として配置 */
+    width: 100%;
+    background-color: #FAECED; /* フッターの背景色 */
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #dee2e6;
+    opacity: 0; /* フェードイン用の透明度 */
+    transform: translateY(50px); /* 下に隠しておく */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-top: 30px; /* 投稿とフッターの間にスペースを作る */
+}
+
+
+
+
+
+.profile-info img {
+    margin-right: 10px; /* 名前との間にスペースを入れる */
+}
+.profile-email {
+    margin-top: 15px;
+}
+/* .user-profile {
+    margin-top: 5px;
+} */
+.profile-button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none; /* ボーダーをなしに設定 */
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 8px;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+.profile-button:hover {
+    background-color: #f9f9f9;
+}
+/* .profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+} */
+.profile-button span {
+    margin-left: 10px;
+    color: inherit;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+
+
+
+/* サイドバー関連 */
+.mt-5 {
+    margin-top: 2% !important; /* utilities.scss 上書き */
+}
+.side-menu {
+    margin-top: 25px;
+}
+
+
+
+
+/* posts/index.blade.php 関連*/
+.card-body {
+    padding: 0;
+    margin-top: 2%;
+}
+.col-md-6 {
+    margin-bottom: 10px;
+    margin: auto;
+}
+.user-profile {
+    margin-top: 0;
+}
+.user-profile {
+    margin-left: 10px;
+}
+.profile-image {
+    border-radius: 50%;
+    width: 40px ;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 5px;
+}
+.post-name {
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+.text-picture-section {
+    margin-left: 8.5%;
+    margin-right: 2%;
+    transform: translateY(-19px);
+}
+.poster {
+    display: flex;
+    color: inherit;
+    text-decoration: none;
+}
+.poster:hover {
+    color: inherit;
+    text-decoration: none;
+}
+.posted-ago {
+    color: grey;
+    margin-left: 3%;
+}
+.hr-index{
+    margin: 0;
+    color: #c0c0c0;
+}
+
+
+/* show.blade.php関連 */
+.comment {
+    width: 44%;
+    height: auto;
+    margin-bottom: 3%;
+}
+.comment .card-body {
+    margin-left: 2%;
+    margin-bottom: 3%;
+}
+.hashtag-link {
+    text-decoration: none;
+}
+
+
+
+/* 全投稿一覧ページ関連 */
+.card {
+    margin-bottom: 5%;
+}
+
+.retweeted-text {
+    display: flex;
+    align-items: center;
+    margin-left: 5.5%;
+}
+.text-muted {
+    margin-left: 1%;
+    margin-top: 1px;
+    margin-bottom: 0;
+}
+.retweeted-icon{
+    color: grey;
 }

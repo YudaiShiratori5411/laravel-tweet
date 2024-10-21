@@ -1,0 +1,28 @@
+/* 通常モード */
+body, * {
+    color: #000;
+}
+
+/* ダークモード */
+body.dark-mode, .dark-mode * {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* 他の要素のダークモード調整（必要に応じて追加） */
+/* header.dark-mode, .dark-mode header {
+    background-color: #1f1f1f;
+} */
+
+/* footer.dark-mode, .dark-mode footer {
+    background-color: #2a2a2a;
+} */
+
+/* 例えば、リンクの色変更（ダークモードで見やすいように） */
+a {
+    color: #0000ee;
+}
+
+.dark-mode a {
+    color: #bb86fc;
+}

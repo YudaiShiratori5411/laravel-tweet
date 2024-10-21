@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.dm {
+    margin: 0 auto;
+    width: 90%;
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 10px;
+}
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #FAECED;
+    z-index: 1; /* サイドバーの上に配置 */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.default-content {
+    margin-top: 60px;
+    /* margin-left: 75px; */
+    transition: filter 0.3s;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px; /* 初期幅 */
+    height: 100%;
+    background-color: #f8f9fa;
+    transition: width 0.3s ease; /* 幅のアニメーション */
+    z-index: 10; /* 他の要素の上に表示 */
+    margin-top: 60px; /* ヘッダーの高さ分のマージン */
+    display: flex;
+    flex-direction: column; /* アイコンを縦に並べる */
+}
+
+.sidebar:hover {
+    width: 170px; /* ホバー時にサイドバーを広げる */
+}
+
+.tab-switch {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: padding 0.3s ease; /* スムーズにパディングを調整 */
+}
+
+.tab-switch .icon {
+    margin-right: 0; /* ホバー前の余白をなくす */
+    font-size: 24px; /* アイコンのサイズ */
+    transition: margin-right 0.3s ease; /* ホバー時に余白をスムーズに調整 */
+}
+
+.tab-switch .label {
+    width: 0; /* ホバー前は幅を0にする */
+    overflow: hidden; /* 表示されない部分を隠す */
+    white-space: nowrap; /* ラベルの文字を1行に収める */
+    opacity: 0; /* 見えない状態 */
+    transition: width 0.3s ease, opacity 0.3s ease; /* 幅と不透明度をスムーズに */
+}
+
+/* サイドバーがホバーされた時、ラベルを表示 */
+.sidebar:hover .tab-switch .label {
+    width: auto; /* ラベルの幅を自動調整 */
+    opacity: 1; /* 不透明にする */
+    margin-left: 10px; /* アイコンとラベルの間にスペースを追加 */
+    transition: width 0.3s ease, opacity 0.3s ease, margin-left 0.3s ease; /* スムーズな表示 */
+}
+
+
+
+
+/* モザイク効果 */
+.blur-effect {
+    filter: blur(5px);
+    pointer-events: none;
+}
+/* モザイク（ブラー）効果を適用する要素 */
+body.mosaic-effect {
+    filter: blur(5px);
+}
+/* サイドバーがホバーされたとき、サイドバーを除いた他の部分にモザイク効果を適用 */
+.sidebar:hover ~ .default-content,
+.sidebar:hover ~ .tab-content {
+    filter: blur(5px);
+}
+
+.icon {
+    margin-right: 5px;
+    font-size: 20px; /* アイコンサイズ */
+}
+.tab-pane {
+    display: none; /* 初期はすべて非表示 */
+}
+.tab-pane.show {
+    display: block; /* アクティブなタブのみ表示 */
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-image {
+    margin-right: 10px;
+}
+
+.text-muted {
+    margin-left: auto;
+    /* text-align: right; */
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.container {
+    position: relative; /* コンテナを相対的に配置 */
+    z-index: 1; /* ヘッダーを最前面に表示 */
+}

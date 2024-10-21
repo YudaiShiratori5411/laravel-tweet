@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -67,7 +68,15 @@
                     </form>
                 </div>
             </div>
+
+            <!-- Register link -->
+            <div class="mt-3 text-center">
+                <p>{{ __("Don't have an account?") }}</p>
+                <a href="{{ route('register') }}" class="btn btn-link">{{ __('Register here') }}</a>
+            </div>
+
         </div>
     </div>
 </div>
 @endsection
+
