@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/like.css') }}">
     <link rel="stylesheet" href="{{ asset('css/messages.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body>
     <header>
-        <h3>ログイン・新規登録</h3>
+        {{-- <h3>ログイン・新規登録</h3> --}}
     </header>
 
     <!-- コンテンツ -->
     @yield('content')
 
-    <footer>
+    {{-- <footer>
         Copyright &copy; Seedkun Inc.
-    </footer>
+    </footer> --}}
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>

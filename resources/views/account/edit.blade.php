@@ -4,7 +4,7 @@
 <div class="container">
     <h1>アカウント編集</h1>
 
-    <form action="{{ route('account.update', $user->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('account.update', $user->id) }}" method="POST" enctype="multipart/form-data" class="account-info">
         @csrf
 
         <div class="form-group">
