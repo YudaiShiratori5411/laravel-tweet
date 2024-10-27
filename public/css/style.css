@@ -3,17 +3,24 @@
     padding: 0;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #FAECED;
     padding: 14px 40px;
     height: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
-.container {
+/* body {
+    padding-top: 60px;
+} */
+/* .container {
     margin-top: 10px;
-}
+} */
 /* form全体のスペース */
 .form-group {
     margin-bottom: 15px;
@@ -250,12 +257,25 @@ footer {
 }
 
 
+/* いいねした投稿一覧画面関連 */
+.card-liked {
+    margin-top: 60px;
+    margin-bottom: 15px;
+}
 
+/* ブックマークした投稿一覧画面関連 */
+.card-bookmarked {
+    margin-top: 60px;
+    margin-bottom: 15px;
+}
 
 /* posts/index.blade.php 関連*/
 .card-body {
     padding: 0;
     margin-top: 2%;
+}
+.card-text {
+    margin-left: 7.5px;
 }
 .col-md-6 {
     margin-bottom: 10px;
@@ -263,9 +283,10 @@ footer {
 }
 .user-profile {
     margin-top: 0;
-}
-.user-profile {
     margin-left: 10px;
+}
+.image-name-date-profile {
+    display: flex;
 }
 .profile-image {
     border-radius: 50%;
@@ -278,7 +299,10 @@ footer {
     font-size: 17px;
     font-weight: bolder;
 }
-
+.post-time {
+    display: flex;
+    width: 350px;
+}
 .text-picture-section {
     margin-left: 8.5%;
     margin-right: 2%;
@@ -304,6 +328,9 @@ footer {
 
 
 /* show.blade.php関連 */
+.card-show {
+    margin-top: 60px;
+}
 .comment {
     width: 44%;
     height: auto;
@@ -336,4 +363,61 @@ footer {
 }
 .retweeted-icon{
     color: grey;
+}
+
+
+/* ワード検索ページ関連 */
+.card-header {
+    display: flex;
+    justify-content: center;
+}
+.card-searchTerm {
+    margin-top: 55px;
+    margin-bottom: 15px;
+}
+
+
+
+/* ログインページ関連 */
+.card-login {
+    margin-top: 55px;
+}
+
+
+/* アカウント詳細・編集画面 */
+.container {
+    margin-top: 70px;
+    max-width: 960px;
+}
+
+/* posts/create.blade.php関連 */
+.container-posts-fixed {
+    position: fixed;
+    justify-content: center;
+    margin-top: 70px !important;
+    left: calc((100% - 960px) / 2);/*(全体幅-要素幅)/2が余白*/
+}
+
+/* コメント作成ページ */
+.container-posts-comment {
+    position: fixed;
+    margin-top: 50px !important;
+    left: calc((100% - 960px) / 2);/*(全体幅-要素幅)/2が余白*/
+}
+
+/* posts/hashtag.blade.php */
+.hashtag-page {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+.card-hashtag {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.text-picture-section-hashtag {
+    margin-left: 40px;
+    transform: translateY(-19px);
+}
+.card-text-hashtag {
+    margin-right: 5px;
 }

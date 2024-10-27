@@ -1,7 +1,8 @@
 @extends('layouts.app_original')
-@section('content')
-<div class="container">
 
+@section('content')
+
+<div class="container container-posts-comment">
     <div class="row justify-content-center mt-5">
         <div class="col-md-8">
             <h3>以下の記事にコメントします</h3>

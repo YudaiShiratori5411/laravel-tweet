@@ -29,7 +29,7 @@
                         <p>このハッシュタグに関連する投稿はありません。</p>
                     @else
                         @foreach($posts as $post)
-                        <div class="card-body">
+                        <div class="card-body" data-post-url="{{ route('posts.show', $post->id) }}">
                             <!-- リツイートされた場合、リツイート情報を表示 -->
                             @if ($post->retweet_id)
                                 <div class="retweeted-text">
@@ -38,26 +38,34 @@
                                 </div>
                             @endif
                             <div class="user-profile">
-                                <a href="{{ route('users.show', ['id' => $post->retweet_id ? $post->originalPost->user->id : $post->user->id]) }}" class="poster">
-                                    @if($post->retweet_id)
-                                        @if($post->originalPost->user->profile_image)
-                                            <img src="{{ asset('storage/' . $post->originalPost->user->profile_image) }}" alt="プロフィール画像" class="profile-image" width="25" height="25">
+                                <div class="image-name-date-profile">
+                                    <a href="{{ route('users.show', ['id' => $post->retweet_id ? $post->originalPost->user->id : $post->user->id]) }}" class="poster">
+                                        @if($post->retweet_id)
+                                            @if($post->originalPost->user->profile_image)
+                                                <img src="{{ asset('storage/' . $post->originalPost->user->profile_image) }}" alt="プロフィール画像" class="profile-image" width="25" height="25">
+                                            @else
+                                                <img src="{{ asset('img/default-profile.png') }}" alt="デフォルトプロフィール画像" class="profile-image" width="25" height="25">
+                                            @endif
                                         @else
-                                            <img src="{{ asset('img/default-profile.png') }}" alt="デフォルトプロフィール画像" class="profile-image" width="25" height="25">
+                                            @if($post->user->profile_image)
+                                                <img src="{{ asset('storage/' . $post->user->profile_image) }}" alt="プロフィール画像" class="profile-image">
+                                            @else
+                                                <img src="{{ asset('img/default-profile.png') }}" alt="デフォルトプロフィール画像" class="profile-image">
+                                            @endif
                                         @endif
-                                        <div class="post-name">{{ $post->originalPost->user->name }}</div>
-                                    @else
-                                        @if($post->user->profile_image)
-                                            <img src="{{ asset('storage/' . $post->user->profile_image) }}" alt="プロフィール画像" class="profile-image">
+                                    </a>
+                                    <a href="{{ route('posts.show', $post->id) }}" class="post-time text-decoration-none">
+                                        @if($post->retweet_id)
+                                            <div class="post-name">{{ $post->originalPost->user->name }}</div>
                                         @else
-                                            <img src="{{ asset('img/default-profile.png') }}" alt="デフォルトプロフィール画像" class="profile-image">
+                                            <div class="post-name">{{ $post->user->name }}</div>
                                         @endif
-                                        <div class="post-name">{{ $post->user->name }}</div>
-                                    @endif
-                                    <div class="posted-ago">
-                                        {{ $post->created_at->diffForHumans() }}
-                                    </div>
-                                </a>
+                                        <div class="posted-ago">
+                                            {{ $post->created_at->diffForHumans() }}
+                                        </div>
+                                    </a>
+                                </div>
+
                                 <a href="{{ route('posts.show', $post->id) }}" class="text-decoration-none text-dark">
                                     <div class="text-picture-section">
                                         <!-- テキスト部分 -->
@@ -198,6 +206,7 @@
     <script src="{{ asset('js/sidebar.js') }}"></script>
     <script src="{{ asset('js/customize.js') }}"></script>
     <script src="{{ asset('js/bookmark.js') }}"></script>
+    <script src="{{ asset('js/posts.js') }}"></script>
 </body>
 </html>
 

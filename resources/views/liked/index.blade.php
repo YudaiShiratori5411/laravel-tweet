@@ -5,7 +5,7 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card text-left">
+            <div class="card card-liked text-left">
                 @if($likedPosts->isEmpty())
                     <div class="no-tweet text-center">
                         <h4>該当するツイートが見つかりませんでした。</h4>
@@ -15,6 +15,13 @@
                         {{-- <div class="card text-center"> --}}
                         <div class="card-body">
                             <div class="user-profile">
+                                <!-- リツイートされた場合、リツイート情報を表示 -->
+                                @if ($post->retweet_id)
+                                    <div class="retweeted-text">
+                                        <i class="fas fa-retweet retweeted-icon"></i>
+                                        <p class="retweet-info text-muted">{{ $post->user->name }} がリツイートしました</p>
+                                    </div>
+                                @endif
                                 <a href="{{ route('users.show', ['id' => $post->retweet_id ? $post->originalPost->user->id : $post->user->id]) }}" class="poster">
                                     @if($post->retweet_id)
                                         @if($post->user->profile_image)
@@ -22,7 +29,7 @@
                                         @else
                                             <img src="{{ asset('img/default-profile.png') }}" alt="デフォルトプロフィール画像" class="profile-image" width="25" height="25">
                                         @endif
-                                        <div class="post-name">{{ $bookmark->user->name }}</div>
+                                        <div class="post-name">{{ $post->user->name }}</div>
                                     @else
                                         @if($post->user->profile_image)
                                             <img src="{{ asset('storage/' . $post->user->profile_image) }}" alt="プロフィール画像" class="profile-image">

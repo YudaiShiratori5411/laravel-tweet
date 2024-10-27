@@ -5,7 +5,7 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card text-left">
+            <div class="card card-bookmarked text-left">
                 @if($bookmarks->isEmpty())
                     <div class="no-tweet text-center">
                         <h4>該当するツイートが見つかりませんでした。</h4>
@@ -15,6 +15,13 @@
                     {{-- <div class="card text-center"> --}}
                         <div class="card-body">
                             <div class="user-profile">
+                                <!-- リツイートされた場合、リツイート情報を表示 -->
+                                @if ($bookmark->post->retweet_id)
+                                    <div class="retweeted-text">
+                                        <i class="fas fa-retweet retweeted-icon"></i>
+                                        <p class="retweet-info text-muted">{{ $bookmark->user->name }} がリツイートしました</p>
+                                    </div>
+                                @endif
                                 <a href="{{ route('users.show', ['id' => $bookmark->retweet_id ? $bookmark->originalPost->user->id : $bookmark->user->id]) }}" class="poster">
                                 {{-- <a href="{{ route('posts.show', $bookmark->id) }}" class="text-decoration-none text-dark"> --}}
                                     @if($bookmark->retweet_id)
@@ -49,13 +56,12 @@
                                     </div>
                                 </a>
 
-                                <a href="{{ route('posts.show', $bookmark->id) }}" class="text-decoration-none text-dark">
-                                    <!-- 写真・動画 -->
+                                <a href="{{ route('posts.show', $bookmark->post->id) }}" class="text-decoration-none text-dark">
                                     <div class="media text-center">
-                                        @if($bookmark->retweet_id && $bookmark->originalPost->media_path)
-                                            @include('partials.media', ['media_path' => $bookmark->originalPost->media_path])
-                                        @elseif($bookmark->media_path)
-                                            @include('partials.media', ['media_path' => $bookmark->media_path])
+                                        @if($bookmark->post->retweet_id && $bookmark->post->media_path)
+                                            @include('partials.media', ['media_path' => $bookmark->post->media_path])
+                                        @elseif($bookmark->post->media_path)
+                                            @include('partials.media', ['media_path' => $bookmark->post->media_path])
                                         @endif
                                     </div>
                                 </a>

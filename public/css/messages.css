@@ -4,7 +4,7 @@
 } */
 
 .dm {
-    margin: 0 auto;
+    margin: 0;
     width: 90%;
 }
 
@@ -31,11 +31,21 @@ body {
     align-items: center;
     padding: 0 20px;
 }
-
+.container-message {
+    margin-left: auto;
+}
+.sent-received-messages {
+    margin-top: 80px;
+    margin-left: 20px;
+}
 .default-content {
     margin-top: 60px;
-    /* margin-left: 75px; */
     transition: filter 0.3s;
+}
+.received-messages-tab {
+    justify-content: center;
+    margin-top: 100px;
+    margin-left: 130px;
 }
 
 .sidebar {
@@ -111,7 +121,7 @@ body.mosaic-effect {
     display: none; /* 初期はすべて非表示 */
 }
 .tab-pane.show {
-    display: block; /* アクティブなタブのみ表示 */
+    display: block;
 }
 
 .list-group-item {
@@ -139,3 +149,10 @@ body.mosaic-effect {
     z-index: 1;
     margin-top: 3%;
 } */
+
+
+
+/* メッセージを送る画面 */
+.card-messages {
+    margin-top: 80px;
+}

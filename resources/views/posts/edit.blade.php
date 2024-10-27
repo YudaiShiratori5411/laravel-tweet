@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container container-posts-fixed">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <form action="{{ route('posts.update', $post->id) }}" method="POST">

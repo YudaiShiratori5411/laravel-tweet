@@ -9,9 +9,9 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card text-left">
+            <div class="card card-searchTerm text-left">
                 <div class="card-header">
-                    「{{ $searchTerm }}」の検索結果:
+                    <strong>「{{ $searchTerm }}」の検索結果：</strong>
                 </div>
                 @if($posts->isEmpty())
                     <div class="no-tweet text-center">
@@ -21,6 +21,13 @@
                     @foreach($posts as $post)
                     <div class="card-body">
                         <div class="user-profile">
+                            <!-- リツイートされた場合、リツイート情報を表示 -->
+                            @if ($post->retweet_id)
+                                <div class="retweeted-text">
+                                    <i class="fas fa-retweet retweeted-icon"></i>
+                                    <p class="retweet-info text-muted">{{ $post->user->name }} がリツイートしました</p>
+                                </div>
+                            @endif
                             <a href="{{ route('users.show', ['id' => $post->retweet_id ? $post->originalPost->user->id : $post->user->id]) }}" class="poster">
                                 @if($post->retweet_id)
                                     @if($post->originalPost->user->profile_image)

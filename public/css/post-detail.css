@@ -1,0 +1,62 @@
+.menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+}
+.menu.visible {
+    display: block;
+}
+
+.post-options {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.options-button {
+    background: none;
+    border: none;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* オプションリストのスタイル */
+.options-list {
+    display: none; /* 最初は非表示 */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 外枠の影で立体感を出す */
+    padding: 10px;
+    white-space: nowrap;
+    flex-direction: column;
+}
+
+/* オプションリストが表示される際のスタイル */
+.options-list.visible {
+    display: flex;
+    gap: 10px; /* 各ボタンの間にスペース */
+}
+
+/* オプションボタンのスタイル調整 */
+.options-list button {
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.options-list button:hover {
+    background-color: #f0f0f0; /* ホバー時の背景色 */
+    color: #007bff; /* ホバー時の文字色 */
+}
+
+button:focus {
+    outline: none;
+}
