@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/like-retweet-bookmark.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/customize.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/setting.css') }}">
     <link rel="stylesheet" href="{{ asset('css/post-detail.css') }}">
 
 </head>
@@ -35,6 +37,7 @@
     <script src="{{ asset('js/like.js') }}"></script>
     <script src="{{ asset('js/retweet.js') }}"></script>
     <script src="{{ asset('js/bookmark.js') }}"></script>
+    <script src="{{ asset('js/customize.js') }}"></script>
     <script src="{{ asset('js/popstate.js') }}"></script>
     <script src="{{ asset('js/post-detail.js') }}"></script>
 </body>

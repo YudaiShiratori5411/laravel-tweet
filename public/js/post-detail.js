@@ -28,3 +28,20 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+
+
+function toggleOptions() {
+    const optionsList = document.getElementById("options-list");
+    optionsList.classList.toggle("visible");
+}
+
+// 外側をクリックするとオプションリストを閉じる
+document.addEventListener('click', function(e) {
+    const optionsButton = document.querySelector('.options-button');
+    const optionsList = document.getElementById("options-list");
+
+    if (!optionsButton.contains(e.target) && !optionsList.contains(e.target)) {
+        optionsList.classList.remove("visible");
+    }
+});

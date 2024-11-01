@@ -1,3 +1,5 @@
+/* 設定画面 */
+
 /* 通常モード */
 body, * {
     color: #000;
@@ -5,24 +7,111 @@ body, * {
 
 /* ダークモード */
 body.dark-mode, .dark-mode * {
-    background-color: #121212;
+    background-color: #333333;
     color: #e0e0e0;
 }
 
-/* 他の要素のダークモード調整（必要に応じて追加） */
-/* header.dark-mode, .dark-mode header {
+/* ヘッダー部分 */
+header {
+    background-color: #FAECED;
+    border-bottom: 1px solid #FAECED;
+}
+header.dark-mode {
     background-color: #1f1f1f;
-} */
+    border-bottom: 1px solid white; /* ダークモード時の境界線 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* オプション: 軽い影を追加 */
+}
 
-/* footer.dark-mode, .dark-mode footer {
-    background-color: #2a2a2a;
-} */
+/* 戻るボタン（ダークモード時） */
+.dark-mode .btn-secondary:hover {
+    background-color: #333333;
+    color: #ffffff;
+    cursor: pointer;
+}
 
-/* 例えば、リンクの色変更（ダークモードで見やすいように） */
+
+
+/* posts/index.blade.php */
+/* リンクの色変更 */
 a {
     color: #0000ee;
 }
 
 .dark-mode a {
-    color: #bb86fc;
+    color: #C299FF;
+}
+.dark-mode p {
+    color: white;
+}
+/* ダークモード時に .card の外枠のみを白にする */
+.dark-mode .card {
+    border: 1px solid #ffffff; /* 外側の枠線を白くする */
+    background-color: #333333;
+    color: inherit; /* テキスト色は親要素に従う */
+}
+.dark-mode .hr-index {
+    border: 1.5px solid #ffffff; /* 外側の枠線を白くする */
+    /* background-color: #333333; */
+}
+
+/* 特定のテキスト要素の色変更（例：.text-dark クラス） */
+.dark-mode .text-dark {
+    color: #ffffff !important; /* ダークモード時にテキストカラーを白に */
+}
+
+.dark-mode .list-group .hashtag-link {
+    border: 1px solid #ffffff;
+}
+
+/* ダークモードのサイドバーのスタイル */
+body.dark-mode .sidebar {
+    background-color: rgba(50, 50, 50, 0.8); /* 少し透明感を持たせた暗い色 */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* 白っぽい枠線 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* 下方向に影を追加 */
+    border-radius: 8px; /* 角を少し丸めて柔らかい印象に */
+    padding: 15px;
+    color: #e0e0e0; /* テキストの色を少し明るめに */
+}
+
+/* サイドバーの見出しのスタイル */
+body.dark-mode .sidebar-header {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+
+/* 検索バー */
+.dark-mode .search-input {
+    color: white;
+    border: 1px solid #007bff;
+    caret-color: white;
+    background-color: #333333;
+}
+/* Note: -webkit-autofillのスタイル変更時は、!importantを使用しないと変更は難しい */
+.dark-mode .search-input:-webkit-autofill {
+    color: white !important;
+    background-color: #333333 !important;
+    -webkit-text-fill-color: white !important;
+}
+/* 検索バーの自動補完時の背景色設定 */
+.dark-mode .search-input:-webkit-autofill,
+.dark-mode .search-input:-webkit-autofill:hover,
+.dark-mode .search-input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #333333 inset;
+}
+/* 検索ボタン、🔍アイコン */
+.dark-mode .btn-search, .search-icon {
+    background-color: #007bff;
+}
+/* ランキングの色 */
+.dark-mode .rank-1 {
+    color: gold;
+}
+.dark-mode .rank-2 {
+    color: silver;
+}
+.dark-mode .rank-3 {
+    color: #cd7f32;
 }

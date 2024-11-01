@@ -155,13 +155,13 @@ header {
     overflow: hidden;
 }
 
-.search-input {
+/* .search-input {
     border: none;
     width: 250px;
     padding: 8px;
     border-radius: 0;
     outline: none;
-}
+} */
 
 .btn-search {
     background-color: white;
@@ -253,7 +253,7 @@ footer {
     margin-top: 2% !important; /* utilities.scss 上書き */
 }
 .side-menu {
-    margin-top: 25px;
+    /* margin-top: 25px; */
 }
 
 
@@ -331,12 +331,15 @@ footer {
 .card-show {
     margin-top: 60px;
 }
-.comment {
-    width: 44%;
+.comments-container {
     height: auto;
-    margin-bottom: 3%;
+    margin-top: 5px;
+    margin-bottom: 40px;
 }
-.comment .card-body {
+.card.card-comment {
+    margin-bottom: 0;
+}
+.comments-container .card-body {
     margin-left: 2%;
     margin-bottom: 3%;
 }

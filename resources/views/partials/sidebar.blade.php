@@ -23,51 +23,43 @@
     <ul class="sidebar-menu">
         <li>
             <a href="{{ route('posts.create') }}">
-                <i class="fas fa-plus"></i> 新規投稿する
+                <i class="fas fa-plus"></i> <div>新規投稿する</div>
             </a>
         </li>
         <li>
             <a href="{{ route('account.show', auth()->id()) }}">
-                <i class="fas fa-user"></i> アカウント詳細
+                <i class="fas fa-user"></i> <div>アカウント詳細</div>
             </a>
         </li>
         <li>
             <a href="{{ route('account.edit', auth()->id()) }}">
-                <i class="fas fa-edit"></i> アカウント編集
+                <i class="fas fa-edit"></i> <div>アカウント編集</div>
             </a>
         </li>
         <li>
             <a href="{{ route('liked.index') }}">
-                <i class="fas fa-heart"></i> いいね
+                <i class="fas fa-heart"></i> <div>いいね</div>
             </a>
         </li>
         <li>
             <a href="{{ route('bookmarks.index') }}">
-                <i class="fas fa-bookmark"></i> ブックマーク
+                <i class="fas fa-bookmark"></i> <div>ブックマーク</div>
             </a>
         </li>
         <li>
             <a href="{{ route('messages.index') }}">
-                <i class="fas fa-envelope"></i> ダイレクトメッセージ
+                <i class="fas fa-envelope"></i> <div>ダイレクトメッセージ</div>
             </a>
         </li>
         <li>
-            <span class="menu-item" data-title="カスタマイズ" id="customize-item">
-                <i class="icon fa fa-cog"></i> カスタマイズ
-                <span class="mode-toggle-tag" id="mode-toggle-tag" style="display: none;">
-                    ダークモードに切り替え
-                </span>
-            </span>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fas fa-sliders-h"></i> 設定
+            <a href="{{ route('settings.index') }}">
+                <i class="icon fa fa-cog"></i> <div>設定</div>
             </a>
         </li>
         <li>
             @if(Auth::check())
                 <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <i class="fas fa-sign-out-alt"></i> ログアウト
+                    <i class="fas fa-sign-out-alt"></i> <div>ログアウト</div>
                 </a>
             @else
                 <a href="{{ route('login') }}" class="btn btn-primary">Login</a>

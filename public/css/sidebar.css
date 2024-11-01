@@ -1,9 +1,11 @@
 /* サイドバー全体のスタイル */
 .sidebar {
     position: fixed;
-    left: 70px;
+    top: calc(50% - 430px/2);
+    left: 80px;
     width: 250px;
     height: auto;
+    padding: 15px;
     overflow-y: auto;
     background-color: #f8f9fa;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -33,11 +35,10 @@
 }
 .sidebar-header {
     display: flex;
+    justify-content: center;
+    font-size: 15px;
+    gap: 15px;
     margin-bottom: 20px;
-}
-.follower-info, .following-info {
-    margin-left: 3px;
-    margin-right: 32px;
 }
 
 
@@ -63,6 +64,27 @@
 .sidebar-menu li a i {
     margin-left: 8px;
     margin-right: 10px;
+}
+
+/* カスタマイズ専用 */
+.sidebar-menu li i {
+    margin-left: 8px;
+    margin-right: 10px;
+}
+.menu-item {
+    text-decoration: none;
+    height: 24px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.menu-item:hover {
+    height: 45px;
+    font-weight: bolder;
+    transform: translateY(-5px);
+    opacity: 1;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
 }
 .sidebar-menu li a:hover {
     height: 45px;

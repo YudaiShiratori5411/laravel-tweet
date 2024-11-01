@@ -14,6 +14,7 @@ use App\Http\Controllers\TrendController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\LikedPostController;
 use App\Http\Controllers\BookmarkController;
+use App\Http\Controllers\SettingsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -91,3 +92,6 @@ Route::get('/liked', [LikedPostController::class, 'index'])->name('liked.index')
 
 // ハッシュタグ検索のルート
 Route::get('/hashtag/{hashtag}', [PostController::class, 'searchByHashtag'])->name('posts.hashtag');
+
+// routes/web.php
+Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');

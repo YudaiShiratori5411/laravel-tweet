@@ -10,51 +10,73 @@
     display: block;
 }
 
+/* オプションボタンの位置調整 */
 .post-options {
     position: absolute;
     top: 12px;
     right: 12px;
 }
 
+/* オプションボタンのスタイル */
 .options-button {
     background: none;
     border: none;
     text-decoration: none;
     font-size: 14px;
     cursor: pointer;
+    color: #333;
 }
 
 /* オプションリストのスタイル */
 .options-list {
-    display: none; /* 最初は非表示 */
+    display: none; /* 初期状態は非表示 */
     position: absolute;
     top: 100%;
     left: 0;
     background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 外枠の影で立体感を出す */
-    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 8px 0;
     white-space: nowrap;
     flex-direction: column;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    z-index: 1000;
 }
 
-/* オプションリストが表示される際のスタイル */
+/* 表示時のスタイル */
 .options-list.visible {
     display: flex;
-    gap: 10px; /* 各ボタンの間にスペース */
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* オプションボタンのスタイル調整 */
+/* 各ボタンのスタイル */
 .options-list button {
     background: none;
     border: none;
     color: #333;
     cursor: pointer;
+    padding: 10px 20px;
+    text-align: left;
+    width: 100%;
+    font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
 .options-list button:hover {
-    background-color: #f0f0f0; /* ホバー時の背景色 */
-    color: #007bff; /* ホバー時の文字色 */
+    background-color: #f0f0f0;
+    color: #007bff;
+}
+
+/* 削除ボタンのスタイル */
+#delete-button {
+    color: #e74c3c; /* 削除ボタンは赤色 */
+}
+
+#delete-button:hover {
+    background-color: #fce4e4; /* ホバー時は淡い赤 */
 }
 
 button:focus {
