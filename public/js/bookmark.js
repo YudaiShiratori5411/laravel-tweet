@@ -31,7 +31,7 @@ document.querySelectorAll('.bookmark-button').forEach(button => {
     });
 });
 
-
+// ブックマークアイコンのクリックアニメーション
 document.querySelectorAll('.bookmark-icon').forEach(icon => {
     icon.addEventListener('click', function() {
         // 一時的に 'clicked' クラスを追加

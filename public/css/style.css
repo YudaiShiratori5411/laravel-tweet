@@ -191,19 +191,19 @@ html, body {
     flex-direction: column;
 }
 
-footer {
-    display: none; /* 初期状態では非表示 */
-    position: relative; /* フッターをページ内の要素として配置 */
+/* footer {
+    display: none;
+    position: relative;
     width: 100%;
-    background-color: #FAECED; /* フッターの背景色 */
+    background-color: #FAECED;
     text-align: center;
     padding: 10px 0;
     border-top: 1px solid #dee2e6;
-    opacity: 0; /* フェードイン用の透明度 */
-    transform: translateY(50px); /* 下に隠しておく */
+    opacity: 0;
+    transform: translateY(50px);
     transition: opacity 0.5s ease, transform 0.5s ease;
-    margin-top: 30px; /* 投稿とフッターの間にスペースを作る */
-}
+    margin-top: 30px;
+} */
 
 
 
@@ -251,9 +251,7 @@ footer {
 /* サイドバー関連 */
 .mt-5 {
     margin-top: 2% !important; /* utilities.scss 上書き */
-}
-.side-menu {
-    /* margin-top: 25px; */
+    max-width: 1150px;
 }
 
 
@@ -273,9 +271,6 @@ footer {
 .card-body {
     padding: 0;
     margin-top: 2%;
-}
-.card-text {
-    margin-left: 7.5px;
 }
 .col-md-6 {
     margin-bottom: 10px;
@@ -304,7 +299,7 @@ footer {
     width: 350px;
 }
 .text-picture-section {
-    margin-left: 8.5%;
+    margin-left: 50px;
     margin-right: 2%;
     transform: translateY(-19px);
 }
@@ -357,15 +352,15 @@ footer {
 .retweeted-text {
     display: flex;
     align-items: center;
-    margin-left: 5.5%;
+    margin-left: 30px;
+    border-radius: 8px;
+    color: grey !important;
 }
 .text-muted {
     margin-left: 1%;
     margin-top: 1px;
     margin-bottom: 0;
-}
-.retweeted-icon{
-    color: grey;
+    color: gray;
 }
 
 
@@ -388,7 +383,7 @@ footer {
 
 
 /* アカウント詳細・編集画面 */
-.container {
+.account-edit, .account-show {
     margin-top: 70px;
     max-width: 960px;
 }

@@ -93,5 +93,5 @@ Route::get('/liked', [LikedPostController::class, 'index'])->name('liked.index')
 // ハッシュタグ検索のルート
 Route::get('/hashtag/{hashtag}', [PostController::class, 'searchByHashtag'])->name('posts.hashtag');
 
-// routes/web.php
+
 Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');

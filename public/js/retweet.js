@@ -45,3 +45,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.retweet-button').forEach(function(button) {
+        button.addEventListener('click', function() {
+            const icon = button.querySelector('.fa-retweet');
+
+            if (button.classList.contains('retweeted')) {
+                // リツイート解除
+                button.classList.remove('retweeted');
+                icon.classList.remove('retweet-green');
+                icon.classList.add('retweet-gray');
+            } else {
+                // リツイート
+                button.classList.add('retweeted');
+                icon.classList.remove('retweet-gray');
+                icon.classList.add('retweet-green');
+            }
+        });
+    });
+});
+
+

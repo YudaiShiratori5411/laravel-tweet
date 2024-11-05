@@ -1,7 +1,7 @@
 @extends('layouts.app_original')
 
 @section('content')
-<div class="container">
+<div class="container account-edit">
     <h1>アカウント編集</h1>
 
     <form action="{{ route('account.update', $user->id) }}" method="POST" enctype="multipart/form-data" class="account-info">

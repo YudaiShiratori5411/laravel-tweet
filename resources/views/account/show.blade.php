@@ -8,7 +8,7 @@
     </div>
 @endif
 
-<div class="container">
+<div class="container account-show">
     <!-- プロフィールヘッダー: 名前とフォローボタン -->
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2>{{ $user->name }} のプロフィール</h2>

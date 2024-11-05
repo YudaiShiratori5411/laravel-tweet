@@ -70,31 +70,32 @@
                             <div class="like-retweet-bookmark-button">
                                 <div class="like-section">
                                     <!-- いいねボタン -->
-                                    <button id="like-button-{{ $bookmark->id }}"
+                                    <button id="like-button-{{ $bookmark->post->id }}"
                                         class="like-button {{ $bookmark->post->likes->contains('user_id', auth()->id()) ? 'liked' : '' }}"
-                                        data-post-id="{{ $bookmark->id }}">
+                                        data-post-id="{{ $bookmark->post->id }}">
                                         ❤
                                     </button>
-                                    <span id="likes-count-{{ $bookmark->id }}">{{ $bookmark->post->likes_count ?? 0 }}</span>
+                                    <span id="likes-count-{{ $bookmark->post->id }}">{{ $bookmark->post->likes_count ?? 0 }}</span>
                                 </div>
+
                                 <!-- リツイートボタンとカウント -->
                                 <div class="retweet-section">
-                                    <button id="retweet-button-{{ $bookmark->id }}"
-                                        class="retweet-button {{ $bookmark->retweets->contains('user_id', auth()->id()) ? 'retweeted' : '' }}"
-                                        data-post-id="{{ $bookmark->id }}">
-                                        <i class="fas fa-retweet" style="color: {{ $bookmark->retweets->contains('user_id', auth()->id()) ? 'green' : 'black' }};"></i>
+                                    <button id="retweet-button-{{ $bookmark->post->id }}"
+                                        class="retweet-button {{ $bookmark->post->retweets->contains('user_id', auth()->id()) ? 'retweeted' : '' }}"
+                                        data-post-id="{{ $bookmark->post->id }}">
+                                        <i class="fas fa-retweet {{ $bookmark->post->retweets->contains('user_id', auth()->id()) ? 'retweet-green' : 'retweet-gray' }}"></i>
                                     </button>
-                                    <span id="retweet-count-{{ $bookmark->post->id }}">{{ $bookmark->post->retweets_count }}</span>
+                                    <span id="retweet-count-{{ $bookmark->post->id }}">{{ $bookmark->post->retweets_count ?? 0 }}</span>
                                 </div>
 
                                 <!-- ブックマークボタンとカウント -->
                                 <div class="bookmark-section">
-                                    <button id="bookmark-button-{{ $bookmark->id }}"
-                                            class="bookmark-button {{ $bookmark->post->bookmarks->contains('user_id', auth()->id()) ? 'bookmarked' : '' }}"
-                                            data-post-id="{{ $bookmark->id }}">
+                                    <button id="bookmark-button-{{ $bookmark->post->id }}"
+                                        class="bookmark-button {{ $bookmark->post->bookmarks->contains('user_id', auth()->id()) ? 'bookmarked' : '' }}"
+                                        data-post-id="{{ $bookmark->post->id }}">
                                         <i class="far fa-bookmark bookmark-icon"></i>
                                     </button>
-                                    <span id="bookmark-count-{{ $bookmark->id }}">{{ $bookmark->post->bookmarks_count ?? 0 }}</span>
+                                    <span id="bookmark-count-{{ $bookmark->post->id }}">{{ $bookmark->post->bookmarks_count ?? 0 }}</span>
                                 </div>
                             </div>
                         </div>

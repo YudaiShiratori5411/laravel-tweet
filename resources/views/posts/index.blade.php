@@ -107,7 +107,7 @@
                                     <button id="retweet-button-{{ $post->id }}"
                                         class="retweet-button {{ $post->retweets->contains('user_id', auth()->id()) ? 'retweeted' : '' }}"
                                         data-post-id="{{ $post->id }}">
-                                        <i class="fas fa-retweet" style="color: {{ $post->retweets->contains('user_id', auth()->id()) ? 'green' : 'black' }};"></i>
+                                        <i class="fas fa-retweet {{ $post->retweets->contains('user_id', auth()->id()) ? 'retweet-green' : 'retweet-gray' }}"></i>
                                     </button>
                                     <span id="retweet-count-{{ $post->id }}">{{ $post->retweets_count }}</span>
                                 </div>

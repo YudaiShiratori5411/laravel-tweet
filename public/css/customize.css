@@ -1,5 +1,3 @@
-/* 設定画面 */
-
 /* 通常モード */
 body, * {
     color: #000;
@@ -10,6 +8,12 @@ body.dark-mode, .dark-mode * {
     background-color: #333333;
     color: #e0e0e0;
 }
+
+
+
+/***************
+*ヘッダー関連*
+***************/
 
 /* ヘッダー部分 */
 header {
@@ -31,49 +35,51 @@ header.dark-mode {
 
 
 
-/* posts/index.blade.php */
-/* リンクの色変更 */
-a {
-    color: #0000ee;
-}
-
+/***************
+*投稿自体に関するもの*
+***************/
 .dark-mode a {
     color: #C299FF;
+}
+.dark-mode a:hover {
+    color: #9999FF;
 }
 .dark-mode p {
     color: white;
 }
 /* ダークモード時に .card の外枠のみを白にする */
 .dark-mode .card {
-    border: 1px solid #ffffff; /* 外側の枠線を白くする */
+    border: 1px solid #ffffff;
     background-color: #333333;
-    color: inherit; /* テキスト色は親要素に従う */
+    color: inherit;
+}
+.dark-mode .card-header {
+    border: 1px solid #e0e0e0;
 }
 .dark-mode .hr-index {
-    border: 1.5px solid #ffffff; /* 外側の枠線を白くする */
-    /* background-color: #333333; */
+    border: 1.5px solid #ffffff;
 }
-
-/* 特定のテキスト要素の色変更（例：.text-dark クラス） */
+/* 投稿内のテキストの色を変更 */
+/* text-darkにしてしまったため、1importantを使う */
 .dark-mode .text-dark {
-    color: #ffffff !important; /* ダークモード時にテキストカラーを白に */
+    color: #ffffff !important;
 }
 
-.dark-mode .list-group .hashtag-link {
-    border: 1px solid #ffffff;
-}
 
-/* ダークモードのサイドバーのスタイル */
+
+/***************
+*サイドバー関連*
+***************/
+
 body.dark-mode .sidebar {
-    background-color: rgba(50, 50, 50, 0.8); /* 少し透明感を持たせた暗い色 */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* 白っぽい枠線 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* 下方向に影を追加 */
-    border-radius: 8px; /* 角を少し丸めて柔らかい印象に */
+    background-color: rgba(50, 50, 50, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
     padding: 15px;
-    color: #e0e0e0; /* テキストの色を少し明るめに */
+    color: #e0e0e0;
 }
-
-/* サイドバーの見出しのスタイル */
+/* 「フォロー・フォロワー数」のスタイル */
 body.dark-mode .sidebar-header {
     font-size: 15px;
     font-weight: bold;
@@ -81,6 +87,9 @@ body.dark-mode .sidebar-header {
 }
 
 
+/***************
+*検索関連*
+***************/
 
 /* 検索バー */
 .dark-mode .search-input {
@@ -105,13 +114,224 @@ body.dark-mode .sidebar-header {
 .dark-mode .btn-search, .search-icon {
     background-color: #007bff;
 }
+
+
+
+/***************
+*トレンドランキング関連*
+***************/
+
+/* トレンドランキングの区切り線 */
+.dark-mode .list-group .hashtag-link {
+    border: 1px solid #ffffff;
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #333333, #222222);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6), -2px -2px 8px rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.dark-mode .list-group .hashtag-link:hover {
+    border: 2px solid #00bfff;
+    margin-bottom: 2px;
+    background-color: #1a1a1a;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8), -4px -4px 10px rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+
+
+/* .list-group-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #2b2b2b;
+    border: none;
+}
+
+.list-group-item:hover {
+    background-color: #3a3a3a;
+}
+
+.hashtag-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.hashtag-link:hover {
+    color: inherit;
+} */
+
+
+/* .dark-mode .list-group-item:hover {
+    background-color: #3a3a3a;
+} */
+
 /* ランキングの色 */
-.dark-mode .rank-1 {
-    color: gold;
+.rank-1 { color: gold; }
+.rank-2 { color: silver; }
+.rank-3 { color: #cd7f32; }
+
+.trend-change .arrow.up { color: #1da1f2; }
+.trend-change .arrow.down { color: #f77; }
+.trend-change .arrow.same { color: #aaa; }
+.trend-change .arrow.new { color: #ff0; }
+
+/* .dark-mode .like-button, .bookmark-icon {
+    color: #e0e0e0;
+} */
+
+
+
+/* いいねした投稿一覧 */
+.dark-mode .like-button.liked {
+    color: red;
 }
-.dark-mode .rank-2 {
-    color: silver;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .dark-mode .col-md-6 {
+    background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+} */
+/* .dark-mode .card-body {
+    background-color: #333;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4), 0px -2px 6px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */
+/* .dark-mode .card-body:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.7), 0px -3px 8px rgba(255, 255, 255, 0.2);
+} */
+
+/* プロフィール画像と名前・日付 */
+.dark-mode .profile-image {
+    border: 2px solid #555;
+    margin-right: 10px;
 }
-.dark-mode .rank-3 {
-    color: #cd7f32;
+.dark-mode .post-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
 }
+.dark-mode .posted-ago {
+    color: #aaaaaa;
+}
+
+/* テキスト部分 */
+.dark-mode .text-picture-section {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ボタンとアイコンのデザイン */
+.dark-mode .like-retweet-bookmark-button {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.dark-mode .like-button,
+.dark-mode .retweet-button,
+.dark-mode .bookmark-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #cccccc;
+    transition: color 0.5s ease, transform 0.5s ease;
+}
+
+.dark-mode .like-button:hover {
+    color: #FF97C2;
+    transform: scale(1.1);
+}
+.dark-mode .liked {
+    color: red;
+    transform: scale(1.1);
+}
+.dark-mode .liked:hover {
+    color: red;
+    transform: scale(1.1);
+}
+
+.dark-mode .retweet-button:hover .fa-retweet {
+    color: #78FF94 !important;
+    transform: scale(1.1);
+}
+/* リツイートされている場合は常に緑色 */
+.dark-mode .retweeted .fa-retweet {
+    color: #32cd32 !important;
+}
+/* リツイートされている状態でホバーしても緑色を保持 */
+.dark-mode .retweeted:hover .fa-retweet {
+    color: #32cd32 !important;
+}
+
+
+.dark-mode .bookmark-button:hover .fa-bookmark {
+    color: #33CCFF !important;
+    transform: scale(1.1);
+}
+.dark-mode .bookmarked .fa-bookmark {
+    color: #3366FF !important;
+    transform: scale(1.1);
+}
+.dark-mode .bookmarked:hover .fa-bookmark {
+    color: #3366FF !important;
+}
+
+/* カウントの色と間隔 */
+.dark-mode .like-section span,
+.dark-mode .retweet-section span,
+.dark-mode .bookmark-section span {
+    color: #cccccc;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* 各投稿の区切り線 */
+.dark-mode .hr-index {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1));
+    margin: 5px 0;
+}
+
+/* リツイート情報 */
+.dark-mode .retweeted-text {
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    color: #bbbbbb;
+}
+
+/* .dark-mode .retweeted-icon {
+    color: #32cd32;
+    margin-right: 5px;
+} */

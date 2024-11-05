@@ -5,7 +5,7 @@
 
 .dm {
     margin: 0;
-    width: 90%;
+    /* width: 90%; */
 }
 
 html, body {
@@ -152,7 +152,8 @@ body.mosaic-effect {
 
 
 
-/* メッセージを送る画面 */
+/* メッセージ作成画面 */
 .card-messages {
+    width: 85%;
     margin-top: 80px;
 }

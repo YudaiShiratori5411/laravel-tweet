@@ -1,4 +1,8 @@
-/* いいねボタン関連 */
+/***************
+*いいねボタン関連*
+***************/
+
+/* いいねされていない状態 */
 .like-button {
     background: none;
     border: none;
@@ -6,18 +10,45 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
-    color: #000;
+    color: silver;
     font-size: 24px;
     transition: transform 0.2s, color 0.2s;
 }
+
 .like-button:hover {
     transform: scale(1.1);
 }
+
+/* いいねされた状態 */
 .like-button.liked {
     color: red;
 }
+
 .like-button:focus {
     outline: none;
+}
+
+/* クリック時のアニメーション */
+@keyframes sparkle {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+        color: #ff6b81; /* ピンクのきらめき */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* .sparkle {
+    animation: sparkle 0.4s ease;
+} */
+/* いいねボタンがクリックされたときのアニメーション */
+.liked {
+    animation: sparkle 0.4s ease-in-out;
+    color: red;
 }
 
 /* いいね一覧ページ関連 */
@@ -29,24 +60,28 @@
 
 
 
+/***************
+*リツイートボタン関連*
+***************/
 
-
-
-
-
-
-
-/* リツイートボタン関連 */
 .retweet-button i {
     cursor: pointer;
 }
 
-.retweeted i {
-    color: green;
+/* Note: 他のスタイルが干渉してしまうため、!importantを使用 */
+.retweet-green {    /* リツイート時 */
+    color: #32cd32 !important;
+}
+.retweet-gray {     /* 未リツイート時 */
+    color: silver !important;
 }
 
 .retweet-button:focus {
     outline: none;
+}
+
+.retweeted-icon {
+    color: gray;
 }
 
 .like-retweet-bookmark-button {
@@ -55,7 +90,6 @@
     align-items: center;
     gap: 20px;
 }
-
 .like-button,
 .retweet-button {
     background-color: transparent;
@@ -63,6 +97,10 @@
     cursor: pointer;
     font-size: 24px;
     outline: inherit;
+}
+/* 「‥がリツイートしました」のリツイートアイコン */
+.fas.fa-retweet .retweeted-icon {
+    color: grey;
 }
 
 .like-section {
@@ -99,13 +137,9 @@
 
 
 
-
-
-
-
-
-
-/* ブックマークボタン関連 */
+/***************
+*ブックマークボタン関連*
+***************/
 .bookmark-section{
     display: flex;
     align-items: center;
@@ -121,15 +155,16 @@
     display: inline-flex;
     align-items: center;
 }
+/* 未ブックマーク状態のアイコン */
 .bookmark-icon {
-    color: black;
+    color: silver;
     font-size: 24px;
     vertical-align: middle;
     margin: 0;
 }
+/* ブックマーク済みのアイコン */
 .bookmark-button.bookmarked .bookmark-icon {
-    color: blue;
-    border: none;
+    color: #0099FF;
 }
 .bookmark-button:focus {
     outline: none;
